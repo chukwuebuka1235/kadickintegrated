@@ -1,0 +1,19 @@
+✅ Slide in from the Left
+<motion.div
+  ref={ref}
+  initial={{ opacity: 0, x: -100 }}  // Start 100px to the left
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  <p>Sliding in from the left!</p>
+</motion.div>
+
+✅ Slide in from the Right
+<motion.div
+  ref={ref}
+  initial={{ opacity: 0, x: 100 }}  // Start 100px to the right
+  animate={inView ? { opacity: 1, x: 0 } : {}}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  <p>Sliding in from the right!</p>
+</motion.div>
