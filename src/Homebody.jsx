@@ -20,14 +20,16 @@ const Homebody = () => {
     <motion.div id="mainbody" ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5 }}>
         <motion.div  className='bodydiv1' ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}  transition={{ duration: 0.5 }}>
             <div className='div1left'>
-                <h1>Agency banking with the difference </h1>
-                <p>We provide you with a quick fix to all 
-                    your banking troubles while building
-                     a profitable relationship with you.</p>
-                  <NavLink to="/getstarted"><button>Get started </button></NavLink>
+                <section>
+                    <h1>Agency banking with the difference </h1>
+                    <p>We provide you with a quick fix to all 
+                        your banking troubles while building
+                        a profitable relationship with you.</p>
+                    <NavLink to="/getstarted"><button>Get started </button></NavLink> 
+                </section>
             </div>
             <div>
-                <img src='./bodyimg1.png' />
+            <img src='./bodyimg1.png' style={{width:"100%"}}/>
             </div>
         </motion.div>
         <Bodytxt />

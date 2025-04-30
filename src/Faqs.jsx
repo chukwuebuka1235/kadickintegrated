@@ -1,34 +1,29 @@
 import { useState } from 'react';
-import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+import { NavLink } from 'react-router-dom'
 
 function Faqs() {
   const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow(!show);
 
   return (
     <>
-      <Button variant="primary" className="d-lg-none" onClick={handleShow}>
-        Launch
-      </Button>
+      <div className="hamburger-div">
+        <button onClick={handleShow}>  {show ? "X" : "☰"}</button>
 
-      <Alert variant="info" className="d-none d-lg-block">
-        Resize your browser to show the responsive offcanvas toggle.
-      </Alert>
-
-      <Offcanvas show={show} onHide={handleClose} placement="start" className="offcanvas-full">
-      <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Responsive offcanvas</Offcanvas.Title>
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <p className="mb-0">
-            This is content within an <code>.offcanvas-lg</code>.
-          </p>
-        </Offcanvas.Body>
-      </Offcanvas>
+        { show === true && (
+          <div className='hamburger-body'>
+            <ul>
+                <li key='home'><NavLink to="/" className={({isActive}) => (isActive ? "active" : "")}>Home</NavLink></li>
+                <li key="getstarted"><NavLink to="/getstarted" className={({isActive}) => (isActive ? "active" : "")}>Get Started</NavLink></li>
+                <li key="support"><NavLink to="/support" className={({isActive}) => (isActive ? "active" : "")}>Support</NavLink></li>
+                <li key="ourstory"><a target="_blank" rel="noreferrer" href="https://kadickintegrated.com">Our Story</a></li>
+            </ul>
+            <div className='hamburger-btn-div'>
+              <button className='hamburger-btn' onClick={() => navigate('/becomeagent')}>Become an Agent</button> 
+            </div>
+          </div>
+        )}
+      </div>
     </>
   );
 }
