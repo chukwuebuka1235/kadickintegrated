@@ -1,8 +1,7 @@
-import React from 'react'
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Bodytxt = () => {
-    const [ref, inView] = useInView({ triggerOnce: true });
     const bodyTxt = [
         { id: "body-1", 
             h1: "Easy Transactions", 
@@ -21,17 +20,26 @@ const Bodytxt = () => {
                 p: "We know that you are the reason we are in business, so we value you!" },
             
     ]
+    useEffect(() => {
+        AOS.init({
+          offset: 120, // pixels before the element enters viewport
+          duration: 800, // animation duration
+          once: true,    // only animate once
+          mirror: false // whether elements should animate out while scrolling past them
+        });
+      }, []);
+
   return (
     <>
-     <motion.div className='bodydiv2' ref={ref} initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}  transition={{ duration: 0.5 }}>
+     <div className='bodydiv2' data-aos="fade-up">
         {bodyTxt.map((text) => {
-            return(<motion.div className="div2div" key={text.id}>
+            return(<div className="div2div" key={text.id} >
                 <h2>{text.h1}</h2>
                 <p>{text.p}</p>
-                </motion.div>
+                </div>
             )
         })}
-     </motion.div>
+     </div>
     </>
   )
 }

@@ -1,24 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Footer from './Footer'
 
 const BecomeAgent = () => {
+ useEffect(() => {
+     AOS.init({
+       duration: 800, // animation duration
+       once: true     // only animate once
+     });
+   }, []);
+
   return (
     <>
      <div className="become-agent-div">
         <div className="agent-top-section">
-            <div className="agent-top-left">
+            <div className="agent-top-left" data-aos="fade-right">
                 <h2>Become a KadickMoni Agent</h2>
                 <p>Please fill out the form correctly and submit it. One of our customer 
                    care representatives will attend to you immediately. <strong>Welcome on board!</strong>
                 </p>
-                
             </div>
-            <div className="agent-top-right">
-                <img src="agentpageimg.png" alt="" />
+            <div className="agent-top-right" data-aos="fade-left">
+                <img src="agentpageimg.png" alt=""  />
             </div>
         </div>
         <div className="agent-bottom-section">
-          <section className="form-section">
+          <div className="form-section" data-aos="fade-right">
             <form action=""> 
               <span>
                 <input type="text" name="firstname" id="firstname" placeholder='First Name' required/>
@@ -43,7 +51,7 @@ const BecomeAgent = () => {
               </select>
               <input type="button" value="Submit" className='submit-form'/>
             </form>
-          </section>
+          </div>
         </div>
         <Footer />
      </div>

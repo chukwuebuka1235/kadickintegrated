@@ -1,31 +1,27 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom'
+// App.jsx or AOSExample.jsx
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-function Faqs() {
-  const [show, setShow] = useState(false);
-  const handleShow = () => setShow(!show);
+const AOSExample = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // animation duration
+      once: true     // only animate once
+    });
+  }, []);
 
   return (
-    <>
-      <div className="hamburger-div">
-        <button onClick={handleShow}>  {show ? "X" : "☰"}</button>
-
-        { show === true && (
-          <div className='hamburger-body'>
-            <ul>
-                <li key='home'><NavLink to="/" className={({isActive}) => (isActive ? "active" : "")}>Home</NavLink></li>
-                <li key="getstarted"><NavLink to="/getstarted" className={({isActive}) => (isActive ? "active" : "")}>Get Started</NavLink></li>
-                <li key="support"><NavLink to="/support" className={({isActive}) => (isActive ? "active" : "")}>Support</NavLink></li>
-                <li key="ourstory"><a target="_blank" rel="noreferrer" href="https://kadickintegrated.com">Our Story</a></li>
-            </ul>
-            <div className='hamburger-btn-div'>
-              <button className='hamburger-btn' onClick={() => navigate('/becomeagent')}>Become an Agent</button> 
-            </div>
-          </div>
-        )}
-      </div>
-    </>
+    <div style={{ padding: '50px', textAlign: 'center' }}>
+      <h1 data-aos="fade-down">Hello with AOS</h1>
+      <p data-aos="fade-left">
+        This paragraph will slide in from the left when it enters the viewport.
+      </p>
+      <div style={{ height: '100vh' }}>   </div> {/* Add space to test scroll animation */}
+    </div>
   );
-}
+};
 
-export default Faqs;
+export default AOSExample;
+
+

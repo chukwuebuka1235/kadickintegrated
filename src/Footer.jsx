@@ -45,11 +45,11 @@ const Footer = () => {
           <Link to="/join-team">Join Our Team</Link>
           <Link to="/getstarted">Get Started</Link>
         </div>
-        <div className="footer-column">
+        <div className="footer-column footercolumn2">
           <h3>Lagos</h3>
           <p>KM 49, Lekki-Epe Expressway, Okolona B/Stop, Ajah, Lagos, State, Nigeria.</p>
         </div>
-        <div className="footer-column">
+        <div className="footer-column footercolumn3">
           <h3>Warri</h3>
           <p>46, Effurun/Sapele Road, Beside Keystone Bank, Alaka Effurun, Delta State, Nigeria.</p>
         </div>

@@ -1,5 +1,4 @@
 import React from "react"
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function MyVerticallyCenteredModal(props) {
@@ -9,13 +8,10 @@ function MyVerticallyCenteredModal(props) {
     const hausalink = "https://www.youtube.com/embed/2UPy2Wsatq8"
     const igbolink = "https://www.youtube.com/embed/E1bwYXOGt1M"
     const pidginlink = "https://www.youtube.com/embed/X8cElIfNGtQ"
-
-
-
 return(
      <Modal
       {...props}
-      size="lg"
+      size="l"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >

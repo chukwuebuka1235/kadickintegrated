@@ -1,23 +1,23 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Becomeagentbody from './layout/Becomeagentbody'
 import Footer from './Footer'
 import Accordion from 'react-bootstrap/Accordion';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+
 
 const Support = () => {
-  const [ref, inView] = useInView({
-              triggerOnce: true, 
-              threshold: 0.1 
-          });
+  useEffect(() => {
+       AOS.init({
+         duration: 800, // animation duration
+         once: true     // only animate once
+       });
+     }, []);
   return (
     <>
       <div className="supportbody">
         <div className="supportdiv1">
-          <motion.div className="supporttext" ref={ref}
-            initial={{ opacity: 0, x: -100 }}  // Start 100px to the right
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, ease: "easeOut" }}>
+          <div className="supporttext" data-aos="fade-right" >
             <h1>We are here to support you.</h1>
             <p>We know that you are the reason we are in business, so we value you. You can reach us via email, 
               phone, WhatsApp message or our ticketing system agents and get quick response to issues raised.
@@ -27,17 +27,16 @@ const Support = () => {
               <li><a href="http://wa.me/+234000KADICK">WhatsApp: +234 (0) 8032 038 109</a></li>
               <li><a href="mailto:customercare@kadickintegrated.com">Email: customercare@kadickintegrated.com</a></li>
           </ul>
-          </motion.div>
-          <motion.div className="supportimg" ref={ref}
-            initial={{ opacity: 0, x: 100 }}  // Start 100px to the right
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, ease: "easeOut" }}>
-           <img src="/supportimg1.png" alt="" />
-          </motion.div>
+          </div>
+          <div className="supportimg" data-aos="fade-left">
+           <img src="/supportimg1.png" alt="" style={{width: "100%" , height: "100%"}}/>
+          </div>
         </div>
         <div className="faqs">
-           <h2>Frequently Asked Questions.</h2>
-           <p>To build a relationship with us while helping your community with cash and financial solutions.</p>
+           <div className="faqtext">
+              <h2>Frequently Asked Questions.</h2>
+              <p>To build a relationship with us while helping your community with cash and financial solutions.</p>
+           </div>
            <div className="faq-div">
             <Accordion defaultActiveKey="" className="my-3 accordion-div" >
                 <div>

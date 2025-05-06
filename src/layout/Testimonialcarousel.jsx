@@ -1,5 +1,26 @@
-import React , { useRef } from 'react'
+import React  from 'react'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+ var settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  autoplay: true,           // <-- this enables autoplay
+  autoplaySpeed: 2000,      // <-- delay between slides (in ms)
+  slidesToShow: 2,
+  slidesToScroll: 1,
+  arrows: false,
+  responsive: [
+    {
+      breakpoint: 700, // Below this width
+      settings: {
+        slidesToShow: 1, // Show only 1 card
+        dots: true,
 
+      },
+    },
+  ]}
 const Testimonialcarousel = () => {
     const testimonials = [
         {
@@ -45,49 +66,9 @@ const Testimonialcarousel = () => {
             testimony: "Since I became an agent with Kadick, I have never experienced any issues at all. My Transactions have been smooth and my customers are happy. Resolving complaints has been fast and I hope Kadick becomes the best in Nigeria."
         }
     ]
-const  carouselRef = useRef(null)
-// const scrollLeft = () => {
-//     console.log("left scroll" , carouselRef.current)
-//     carouselRef.current.ScrollBy({
-//         left: -300 , 
-//         behaviour: "smooth"
-//     })
-// }
-// const scrollRight = () => {
-//     console.log("right scroll" , carouselRef.current)
-//     carouselRef.current.ScrollBy({
-//         left: -300 ,
-//         behaviour: "smooth"
-//     })
-// }
-
-const scrollLeft = () => {
-    console.log("carouselRef.current:", carouselRef.current);
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: -300,
-        behavior: "smooth",
-      });
-    } else {
-      console.log("carouselRef.current is null or undefined");
-    }
-  };
-  
-  const scrollRight = () => {
-    console.log("carouselRef.current:", carouselRef.current);
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: 300,
-        behavior: "smooth",
-      });
-    } else {
-      console.log("carouselRef.current is null or undefined");
-    }
-  };
-
-
 
   return (
+    
     <div>
         <div className="testimonial-container">
             <div  className='main-testimony'>
@@ -95,23 +76,21 @@ const scrollLeft = () => {
                 <h2>Read the Testimonials of Kadick Agents</h2>
             </div>
         
-        <div className="testimonial-carousel" ref={carouselRef}>
-            { testimonials.map(( feature ) => {
-                return(
-                    <div className="testimonial-card" key={feature.id}>
-                        <img src={feature.src} alt='' />
+            <div className="testimonial-carousel">
+              <Slider {...settings}>
+                  {testimonials.map((feature) => (
+                    <div  key={feature.id} className="slide-container">
+                      <div className="testimonial-card">
+                        <img src={feature.src} alt="" />
                         <h2 className="testimonial-name">{feature.name}</h2>
                         <p className="testimonial-company">{feature.company}</p>
                         <p className="testimonial-text">"{feature.testimony}"</p>
+                       </div>
                     </div>
-                )
-            })}
+                  ))}
+              </Slider>
+            </div>
         </div>
-        <div className='carousel-btns'>
-            <button onClick={scrollLeft} className='scroll-button left-scroll-btn'></button>
-            <button onClick={scrollRight} className='scroll-button right-scroll-btn'></button>
-        </div>
-    </div>
     </div>
   )
 }
