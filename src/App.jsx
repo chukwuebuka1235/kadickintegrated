@@ -21,12 +21,6 @@ const App = () => {
           <Route index element={<Homebody />} /> 
           <Route path="getstarted" element={<Getstarted/>} />
           <Route path="support" element={<Support />} />
-          <Route path="faqs" element={<Faqs />} />
-          <Route path="requirements" element={<Requirements />} />
-          <Route path="apply-now" element={<Applynow />} />
-          <Route path="join-team" element={<Jointeam />} />
-          <Route path="terms" element={<Terms />} />
-          <Route path="privacy" element={<Privacy />} />
           <Route path="becomeagent" element={<BecomeAgent />} />
           <Route path='/*' element={<Notfound />} />
       </Route>

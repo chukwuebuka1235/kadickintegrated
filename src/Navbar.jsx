@@ -42,7 +42,7 @@ const Navbar = () => {
      </section>
      <section className='hamburger-div'>
         <div className="hamburger-logo-div">
-          <div><img src="./logo.png" /></div>
+          <div><img src="./logo.png" style={{ height: '30px'}}/></div>
           <div> <button onClick={handleShow}>  {show ? "X" : "☰"}</button></div>
         </div>
 

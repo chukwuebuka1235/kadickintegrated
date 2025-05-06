@@ -85,13 +85,18 @@ body{
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 40px;
+  padding: 6px 40px;
 }
 .hamburger-logo-div img{
   width: 100px;
   height: fit-content;
 }
-.hamburger-logo-div button ,
+.hamburger-logo-div button {
+  all: unset;
+  padding: 0px 0px;
+  font-size: 23px;
+  font-weight: 700;
+}
 .hamburger-body button{
   all: unset;
   padding: 10px 0px;
@@ -651,6 +656,7 @@ max-width: 400px;
 .footer-bottom-links {
   display: flex;
   gap: 15px;
+  font-size: 12px;
 }
 
 .footer-bottom-links a {

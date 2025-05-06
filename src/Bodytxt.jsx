@@ -23,7 +23,7 @@ const Bodytxt = () => {
     useEffect(() => {
         AOS.init({
           offset: 120, // pixels before the element enters viewport
-          duration: 800, // animation duration
+          duration: 600, // animation duration
           once: true,    // only animate once
           mirror: false // whether elements should animate out while scrolling past them
         });

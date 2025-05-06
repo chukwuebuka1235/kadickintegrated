@@ -6,7 +6,7 @@ import Footer from './Footer'
 const BecomeAgent = () => {
  useEffect(() => {
      AOS.init({
-       duration: 800, // animation duration
+       duration: 600, // animation duration
        once: true     // only animate once
      });
    }, []);

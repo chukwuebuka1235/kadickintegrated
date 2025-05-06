@@ -9,7 +9,7 @@ import Accordion from 'react-bootstrap/Accordion';
 const Support = () => {
   useEffect(() => {
        AOS.init({
-         duration: 800, // animation duration
+         duration: 600, // animation duration
          once: true     // only animate once
        });
      }, []);

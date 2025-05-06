@@ -9,14 +9,10 @@ import { NavLink , Link } from 'react-router-dom'
 
 
 const Homebody = () => {
-    // Initialize AOS (Animate On Scroll) library
-    // This will add animation effects to elements when they come into view
-    // The duration and once options can be customized as per your needs
-    // duration: 800ms, once: true means the animation will only happen once when the element comes into view
 useEffect(() => {
     AOS.init({
         offset: 120, // pixels before the element enters viewport
-        duration: 800, // animation duration
+        duration: 600, // animation duration
         once: true,    // only animate once
         mirror: false // whether elements should animate out while scrolling past them
     });

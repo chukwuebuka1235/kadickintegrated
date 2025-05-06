@@ -39,11 +39,11 @@ const Footer = () => {
         </div>
         <div className="footer-column">
           <h3>Quick Links</h3>
-          <Link to="/faqs">FAQs</Link>
-          <Link to="/requirements">Requirements</Link>
-          <Link to="/apply-now">Apply Now!</Link>
-          <Link to="/join-team">Join Our Team</Link>
-          <Link to="/getstarted">Get Started</Link>
+          <p>FAQs</p>
+          <p>Requirements</p>
+          <p>Apply Now!</p>
+          <p>Join Our Team</p>
+          <Link to="/getstarted"><p>Get Started</p></Link>
         </div>
         <div className="footer-column footercolumn2">
           <h3>Lagos</h3>
@@ -57,8 +57,8 @@ const Footer = () => {
       <div className="footer-bottom">
         <p className="reserved-right">&copy; 2022 Kadick Integrated Limited | All Right Reserved.</p>
         <div className="footer-bottom-links">
-          <Link to="/privacy">Privacy</Link>
-          <Link to="/terms">Terms & Conditions</Link>
+          <p>Privacy</p>
+          <p>Terms & Conditions</p>
         </div>
       </div>
     </footer>
