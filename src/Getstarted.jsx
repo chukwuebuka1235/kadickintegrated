@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import Arrowup from  '../public/arrowup.png'
 import Arrowdown from  '../public/arrowdown.png'
 import Redfooter from './Redfooter'
-import Getstaredmodal from './getstartedmodal'
-import { motion } from 'framer-motion';
+import Getstaredmodal from './Getstartedmodal'
 
 
 const Getstarted = () => {
